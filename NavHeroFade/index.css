@@ -1,0 +1,224 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    color: whitesmoke;
+}
+
+/* Navbar */
+#navbar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    flex: 1;
+    z-index: 3;
+    width: 100%;
+    min-height: 70px;
+    -webkit-transform: translate3d(0, 2rem, 0);
+    transform: translate3d(0, 2rem, 0);
+    transition: -webkit-transform 325ms cubic-bezier(.4, .25, .3, 1);
+    transition: transform 325ms cubic-bezier(.4, .25, .3, 1);
+    transition: transform 325ms cubic-bezier(.4, .25, .3, 1), -webkit-transform 325ms cubic-bezier(.4, .25, .3, 1)
+}
+
+#navbar:after {
+    box-shadow: 0 0 0 2.5rem #2c2e31    
+}
+
+.scrolled {
+    background-color: #2B32B2 !important;
+    -webkit-transform: translateZ(0) !important;
+    transform: translateZ(0) !important;
+}
+
+.scrolled:after {
+    opacity: 1;
+    box-shadow: 0 0 0 0 #2c2e31
+}
+
+.nav_menu {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+    opacity: 1;
+    background-color: transparent;
+    justify-content: center;
+    align-items: center;
+    padding: .25rem 0 0;
+}
+
+.navbar .brand {
+    font-family: 'Pacifico', cursive;    
+    text-decoration: none;
+    font-size: 2em;
+    color: whitesmoke;
+    margin-left: 1em;
+}
+
+.nav_item {
+    padding: 0 20px;
+    text-transform: uppercase;
+}
+
+.nav_item a {
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 1.1em;
+    opacity: 0.7;
+    transition: 0.3s ease;
+    padding-bottom: 0.8em; 
+}
+
+.nav_item a:hover {
+    opacity: 1;
+    padding-bottom: 0.2em;
+    border-bottom: 1px solid whitesmoke;
+}    
+
+.nav_users {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar .btn {
+    display: inline-block;
+    padding: .1em 1.2em 0;
+    border: 1px solid whitesmoke;
+    border-radius: .3em;
+    line-height: 2.2em;
+    vertical-align: middle;
+    text-align: center;
+    margin-right: 1em;
+    opacity: 0.6;
+    transition: 0.3s ease;
+    text-decoration: none;
+    color: whitesmoke;
+    text-transform: uppercase;
+}
+
+.navbar .register {
+    background-color: #bead0f;
+    border: 1px solid #bead0f;
+    color: #000;
+}
+
+.navbar .btn:hover {
+    opacity: 1;
+}
+
+.navbar .hamburger, .navbar .cross {
+    display: none;
+}
+
+.fullscreen_menu {
+    position: absolute;
+    background-color: #2B2B2B;
+    z-index: 100;
+    width: 100%;
+    font-size: 1.2em;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 7em;
+    opacity: 0.9;
+}
+
+.fullscreen_menu li {
+    padding: 10px;
+}
+
+@media screen and (max-width: 1010px) {
+    .navbar .brand {
+        font-size: 1.6em;
+    }
+
+    .nav_item a {
+        font-size: 0.8em;
+    }
+
+    .navbar .btn {
+        line-height: 1.8em;
+        padding: .08em .8em 0;
+    }
+}
+
+@media screen and (max-width: 845px) {
+    #navbar {
+        justify-content: flex-end;
+    }
+
+    .navbar .brand {
+        margin-right: auto;
+    }
+
+    .navbar .nav_menu {
+        flex-direction: column;
+        display: none;
+    }
+
+    .navbar .hamburger {
+        display: block;
+    }
+}    
+
+/* Hero */
+.hero_container {
+    min-height: 100vh;    
+    min-width: 100%;
+    display: flex;
+}
+
+.hero {
+    min-height: 100vh;
+    min-width: 100%;
+    background: #1488CC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #2B32B2, #1488CC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #2B32B2, #1488CC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.opaquinator {
+    position: absolute;
+    min-height: 100vh;
+    min-width: 100%;
+    z-index: 2;
+    background-color: #2B32B2;
+    opacity: 0;
+}
+
+.hero p:first-of-type {
+    padding: 200px 50px 20px 50px;
+}
+
+.hero p {
+    padding: 20px 50px;
+}
+
+/* Content */
+
+.content {
+    min-height: 100vh;
+}
+
+/* Footer */
+
+footer {
+    background-color: #2B2B2B;
+    min-height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+footer a {
+    color: whitesmoke;
+    font-weight: bold;
+}
