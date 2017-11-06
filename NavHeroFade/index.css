@@ -88,6 +88,7 @@ body {
 .navbar .btn {
     display: inline-block;
     padding: .1em 1.2em 0;
+    min-width: 80px;
     border: 1px solid whitesmoke;
     border-radius: .3em;
     line-height: 2.2em;
@@ -132,9 +133,22 @@ body {
     padding: 10px;
 }
 
-@media screen and (max-width: 1010px) {
-    .navbar .brand {
+@media screen and (max-width: 1089px) {
+    .nav_container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        padding: 1em 0;
+    }
+
+    .nav_container .brand {
         font-size: 1.6em;
+        flex: 1;
+    }
+
+    .nav_container .hamburger {
+        margin-right: 1em;
     }
 
     .nav_item a {
@@ -147,13 +161,15 @@ body {
     }
 }
 
-@media screen and (max-width: 845px) {
-    #navbar {
-        justify-content: flex-end;
+@media screen and (max-width: 921px) {
+    .nav_container .brand {
+        font-size: 1.3em;
     }
+}
 
-    .navbar .brand {
-        margin-right: auto;
+@media screen and (max-width: 888px) {
+    #navbar {
+        justify-content: space-between;
     }
 
     .navbar .nav_menu {
@@ -161,8 +177,41 @@ body {
         display: none;
     }
 
-    .navbar .hamburger {
+    .nav_container .hamburger {
         display: block;
+        margin: 1em;
+    }
+}    
+
+@media screen and (max-width: 600px) {
+    #navbar {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav_container .brand {
+        margin-left: 1em;
+        align-self: flex-start;
+        order: 1;
+    }
+
+    .navbar .nav_users {
+        order: -100;
+        flex-grow: 1;
+        width: 100%;
+        margin: 0 auto;
+        padding: 5px;
+    }
+
+    .nav_users .btn {
+        flex-basis: 45%;
+    }
+
+    .nav_container .hamburger {
+        align-self: flex-end;
+        order: 1;
+        margin: auto;
     }
 }    
 
